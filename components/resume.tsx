@@ -29,7 +29,19 @@ export default function App() {
             <>
               <ModalHeader className="flex flex-col gap-1"></ModalHeader>
               <ModalBody>
-                  <Image src="/myresume.png" width={700} height={700} alt="Picture of the author" quality='95'/>
+                  <Image 
+                    src="/myresume.png" 
+                    width={700} 
+                    height={700} 
+                    sizes="100vw"
+                    style={{
+                      width: '100%',
+                      height: 'auto',
+                    }}
+                    alt="my resume" 
+                    quality={100} 
+                    priority={true}
+                  />
               </ModalBody>
               <ModalFooter>
                 <Button color="primary">
