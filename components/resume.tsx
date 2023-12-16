@@ -23,13 +23,13 @@ export default function App() {
            Resume
           </Button>
       </div>
-      <Modal backdrop='blur' isOpen={isOpen} onClose={onClose} isDismissable size='xl' >
+      <Modal backdrop='blur' isOpen={isOpen} onClose={onClose} isDismissable size='2xl' >
         <ModalContent>
           {() => (
             <>
               <ModalHeader className="flex flex-col gap-1"></ModalHeader>
               <ModalBody>
-                  <Image src="https://raw.githubusercontent.com/harshau007/portfolio-website/master/public/myresume.png" width={700} height={700} alt="Picture of the author"/>
+                  <Image src="/myresume.png" width={700} height={700} alt="Picture of the author"/>
               </ModalBody>
               <ModalFooter>
                 <Button color="primary">
