@@ -3,7 +3,7 @@ import { CgWorkAlt } from "react-icons/cg";
 import { LuGraduationCap } from "react-icons/lu";
 import tcetlinux from "@/public/tcetlinux.png";
 import osjob from "@/public/osjob.png";
-import quizapi from "@/public/quizapi.png";
+import ducker from "@/public/ducker.png";
 
 export const links = [
   {
@@ -69,12 +69,12 @@ export const projectsData = [
     link: "https://github.com/harshau007/job-portal",
   },
   {
-    title: "Quiz API",
+    title: "Ducker",
     description:
-      "Curated a Spring boot Microservice with services such as Authentication, API Gateway, Service Registry, etc",
-    tags: ["Java", "Spring Boot", "Microservice", "PostgreSQL", "JWT"],
-    imageUrl: quizapi,
-    link: "https://github.com/harshau007/Spring-Microservice-beginner/",
+      "Comprehensive solution for monitoring Docker containers. It displays running Docker containers and their stats and logs on a user-friendly frontend interface.",
+    tags: ["NestJs", "Docker Engine API", "ReactJs", "ChartJs"],
+    imageUrl: ducker,
+    link: "https://github.com/harshau007/ducker",
   },
 ] as const;
 
@@ -88,7 +88,7 @@ export const skillsData = [
   "MongoDB",
   "Express",
   "PostgreSQL",
-  "Python",  
+  "Python",
   "Java",
   "Go",
   "Docker",

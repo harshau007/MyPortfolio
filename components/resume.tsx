@@ -3,6 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import {Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure} from "@nextui-org/react";
+import resume from "@/public/myresume.png";
 
 export default function App() {
   const {isOpen, onOpen, onClose} = useDisclosure();
@@ -14,9 +15,9 @@ export default function App() {
   return (
     <>
       <div className="flex flex-wrap gap-3">
-          <Button  
-            variant="flat" 
-            color="warning" 
+          <Button
+            variant="flat"
+            color="warning"
             onPress={() => handleOpen()}
             className="capitalize"
           >
@@ -29,17 +30,17 @@ export default function App() {
             <>
               <ModalHeader className="flex flex-col gap-1"></ModalHeader>
               <ModalBody>
-                  <Image 
-                    src="/myresume.png" 
-                    width={700} 
-                    height={700} 
+                  <Image
+                    src={resume}
+                    width={700}
+                    height={700}
                     sizes="100vw"
                     style={{
                       width: '100%',
                       height: 'auto',
                     }}
-                    alt="my resume" 
-                    quality={100} 
+                    alt="my resume"
+                    quality={100}
                     priority={true}
                   />
               </ModalBody>
