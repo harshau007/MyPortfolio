@@ -1,18 +1,22 @@
+import { useTheme } from "@/context/theme-context";
+
 export default function GithubContributions() {
+  const { theme } = useTheme();
+
+  const lightSrc =
+    "https://github-readme-activity-graph.vercel.app/graph?username=harshau007&bg_color=deddda&color=000000&line=2ec27e&point=26a269&area=true&hide_border=true&hide_title=true";
+  const darkSrc =
+    "https://github-readme-activity-graph.vercel.app/graph?username=harshau007&bg_color=000000&color=f6f5f4&line=9a9996&point=ffffff&area=true&hide_border=true&hide_title=true";
   return (
-    <section
-      id="github"
-      className="px-4 sm:px-8 py-8 sm:py-12 flex flex-col gap-6 sm:gap-14"
-    >
-      <div className="flex flex-col items-center justify-center">
-        <div className="max-w-5xl mx-auto sm:max-w-xl md:max-w-2xl lg:max-w-5xl">
-          <img
-            src="https://github-readme-activity-graph.vercel.app/graph?username=harshau007&theme=github-compact&hide_border=true&color=ffffff&line=42a5f5&point=ffffff&hide_title=true"
-            alt="GitHub Contribution Graph"
-            className="w-full"
-          />
-        </div>
+    <div className="m-10 flex items-center justify-center">
+      <div className="w-full">
+        <img
+          src={theme === "light" ? lightSrc : darkSrc}
+          alt="GitHub Contribution Graph"
+          className="border rounded-xl"
+          style={{ width: "100%", height: "auto" }}
+        />
       </div>
-    </section>
+    </div>
   );
 }
