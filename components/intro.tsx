@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { BsArrowRight, BsLinkedin } from "react-icons/bs";
@@ -53,7 +52,7 @@ export default function Intro() {
               duration: 0.7,
             }}
           >
-             🎯
+            🎯
           </motion.span>
         </div>
       </div>
@@ -90,10 +89,8 @@ export default function Intro() {
           <BsArrowRight className="opacity-70 group-hover:translate-x-1 transition" />
         </Link>
 
-        <a
-          className="group bg-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10"
-        >
-          <Resume/>
+        <a className="group bg-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10">
+          <Resume />
           <HiDownload className="opacity-60 group-hover:translate-y-1 transition" />
         </a>
 
