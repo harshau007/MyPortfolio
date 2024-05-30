@@ -1,18 +1,46 @@
 "use client";
-
-import { useSectionInView } from "@/lib/hooks";
-import React, { useState } from "react";
-import GitHubCalendar from "react-github-calendar";
+import React, { useEffect, useState } from "react";
 import SectionHeading from "./section-heading";
-import GithubContributions from "./githubContri";
 import { motion } from "framer-motion";
+import ActivityCalendar from "react-activity-calendar";
+import GithubContributions from "./githubContri";
 import { useTheme } from "@/context/theme-context";
+import { useSectionInView } from "@/lib/hooks";
 
 const Github = () => {
   const currentYear = new Date().getFullYear();
   const [year, setYear] = useState(currentYear);
+  const [activityData, setActivityData] = useState([]);
   const { theme } = useTheme();
   const { ref } = useSectionInView("Github");
+
+  async function fetchGitHubActivity() {
+    try {
+      const url = `https://github-contributions-api.jogruber.de/v4/harshau007`;
+      const response = await fetch(url);
+      if (!response.ok) {
+        throw new Error("Failed to fetch GitHub activity");
+      }
+      const data = await response.json();
+      const commitEvents = data.contributions || [];
+
+      const filterData = commitEvents.filter((event: any) => {
+        return new Date(event.date).getFullYear() === 2024;
+      });
+      return filterData;
+    } catch (error) {
+      console.error(error);
+      return [];
+    }
+  }
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await fetchGitHubActivity();
+      setActivityData(data);
+    };
+    fetchData();
+  }, []);
 
   return (
     <section
@@ -22,44 +50,24 @@ const Github = () => {
     >
       <SectionHeading>Github</SectionHeading>
       <div className="flex flex-col items-center mt-8">
-        <div className="w-full mx-auto overflow-x-auto sm:p-10 sm:overflow-visible lg:max-w-none">
-          <GitHubCalendar
-            colorScheme={theme ? "dark" : "light"}
-            year={year}
-            className="mb-6 sm:overflow-visible lg:overflow-visible px-2 sm:px-0"
-            username="harshau007"
-            blockSize={15}
-            blockMargin={5}
-            fontSize={16}
-          />
-        </div>
-        <div className="flex justify-center items-center gap-4 flex-wrap">
-          <motion.button
-            disabled={year === new Date("2020").getFullYear()}
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            onClick={() => setYear(year - 1)}
-            className={`text-xl sm:text-2xl md:text-3xl text-white ${
-              theme
-                ? "bg-blue-500 hover:bg-blue-600"
-                : "bg-gray-800 hover:bg-gray-700"
-            } font-bold py-2 px-4 sm:py-3 sm:px-6 rounded-lg border-2 border-transparent focus:outline-none focus:ring-2 focus:ring-blue-600 mb-2 sm:mb-0`}
-          >
-            {"<"}
-          </motion.button>
-          <motion.button
-            disabled={year === currentYear}
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            onClick={() => setYear(year + 1)}
-            className={`text-xl sm:text-2xl md:text-3xl text-white ${
-              theme
-                ? "bg-blue-500 hover:bg-blue-600"
-                : "bg-gray-800 hover:bg-gray-700"
-            } font-bold py-2 px-4 sm:py-3 sm:px-6 rounded-lg border-2 border-transparent focus:outline-none focus:ring-2 focus:ring-blue-600 mb-2 sm:mb-0`}
-          >
-            {">"}
-          </motion.button>
+        <div className="w-full mx-auto overflow-x-auto sm:overflow-visible lg:max-w-none">
+          {activityData.length > 0 ? (
+            <ActivityCalendar
+              colorScheme={theme ? "dark" : "light"}
+              theme={{
+                light: ["#f0f0f0", "#c4edde", "#7ac7c4", "#f73859", "#384259"],
+                dark: ["#383838", "#4D455D", "#7DB9B6", "#F5E9CF", "#E96479"],
+              }}
+              data={activityData}
+              showWeekdayLabels
+              blockSize={14}
+              blockRadius={7}
+              blockMargin={5}
+              fontSize={16}
+            />
+          ) : (
+            <ActivityCalendar data={[]} loading />
+          )}
         </div>
       </div>
       <GithubContributions />
