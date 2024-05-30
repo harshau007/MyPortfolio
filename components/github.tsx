@@ -8,8 +8,6 @@ import { useTheme } from "@/context/theme-context";
 import { useSectionInView } from "@/lib/hooks";
 
 const Github = () => {
-  const currentYear = new Date().getFullYear();
-  const [year, setYear] = useState(currentYear);
   const [activityData, setActivityData] = useState([]);
   const { theme } = useTheme();
   const { ref } = useSectionInView("Github");
