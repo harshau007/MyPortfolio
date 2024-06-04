@@ -1,5 +1,5 @@
 import tcetlinux from "@/public/tcetlinux.png";
-import osjob from "@/public/osjob.png";
+import welcome from "@/public/welcome.png";
 import ducker from "@/public/ducker.png";
 
 export const links = [
@@ -35,20 +35,20 @@ export const links = [
 
 export const projectsData = [
   {
+    title: "ALG-Welcome",
+    description:
+      "A user-friendly Welcome application for Arka Linux GUI, aiding users in navigating Arch-based Linux distributions efficiently.",
+    tags: ["Go", "ReactJs", "TailwindCSS", "Wails"],
+    imageUrl: welcome,
+    link: "https://github.com/arch-linux-gui/alg-welcome",
+  },
+  {
     title: "TCET-Linux",
     description:
-      "I have been working as a Production Engineer on this project for the past 6 months",
+      "TCET-Linux is an open-source operating system providing basic services, and various software packages for students.",
     tags: ["Linux", "Arch", "Shell", "GitHub"],
     imageUrl: tcetlinux,
     link: "https://github.com/tcet-opensource/tcet-linux",
-  },
-  {
-    title: "OS Portal",
-    description:
-      "I worked as a Backend Developer for this project and created a Golang based API with JWT Authentication.",
-    tags: ["Go", "MongoDB", "JWT", "Next.js", "Tailwind", "React"],
-    imageUrl: osjob,
-    link: "https://github.com/harshau007/job-portal",
   },
   {
     title: "Ducker",

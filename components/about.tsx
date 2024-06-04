@@ -20,26 +20,20 @@ export default function About() {
       <SectionHeading>About me</SectionHeading>
       <p className="mb-3">
         Currently pursuing my degree in{" "}
-        <span className="font-medium">Computer Science Engineering</span>with a strong passion for programming. Since my 12th grade.{" "}
+        <span className="font-medium">Computer Science Engineering</span> with a
+        strong passion for programming. Since my 12th grade.{" "}
         <span className="italic">My favorite part of programming</span> is the
-        phase when I am learning new concepts. I <span className="underline">love</span> the
-        feeling of finally figuring out a solution to a problem. My favorite programming languages include
-        {" "}
-        <span className="font-medium">
-          Java, JavaScript, Golang,
-        </span> as well as databases such as <span className="font-medium">PostgreSQL and MongoDB</span>
-        . I am also familiar with <span className="font-medium">Docker & Kubernetes</span>, which are essential tools in modern software development. I am always looking to
-        learn new technologies. I am currently looking for a{" "}
-        <span className="font-medium">Intern position</span> as a software
-        developer.
-      </p>
-
-      <p>
-        <span className="italic">When I'm not coding</span>, I enjoy playing
-        games, watching movies, and cooking. I also enjoy{" "}
-        <span className="font-medium">learning new things</span>. I am currently
-        deepening my understanding of{" "}
-        <span className="font-medium">JWT authentication</span>.
+        phase when I am learning new concepts. I{" "}
+        <span className="underline">love</span> the feeling of finally figuring
+        out a solution to a problem. My favorite programming languages include{" "}
+        <span className="font-medium">Java, JavaScript, Golang,</span> and
+        databases such as{" "}
+        <span className="font-medium">PostgreSQL and MongoDB</span>. I am also
+        familiar with <span className="font-medium">Docker & Kubernetes</span>,
+        which are essential tools in modern software development. I am always
+        looking to learn new technologies. I am currently looking for an{" "}
+        <span className="font-medium">Intern position</span> as a Software
+        Developer.
       </p>
     </motion.section>
   );
