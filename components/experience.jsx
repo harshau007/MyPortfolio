@@ -7,13 +7,13 @@ import SectionHeading from "./section-heading";
 
 const experience = [
   {
-    title: "Core Team",
+    title: "Core Team - Developer",
     company_name: "Arka Linux GUI",
     date: "Mar 2024 - Present",
     details: [
       "Developed a <span style='color: white;'>user-friendly Welcome application</span> for Arka Linux GUI, aiding users in navigating Arch-based Linux distributions efficiently.",
       "Revamped the ALG website, enhancing its design and functionality to provide a more <span style='color: white;'>engaging user experience.</span>",
-      "<span style='color: white;'>Contributed as a core team member</span>, driving innovation and user-focused improvements for Arka Linux GUI.",
+      "<span style='color: white;'>Contributed as a core team member</span>, driving innovation and user-focused improvements for Arch Linux GUI.",
     ],
   },
   {
@@ -125,7 +125,23 @@ const Experience = () => {
   }, []);
 
   return (
-    <section id="experience" ref={ref} className="scroll-mt-28 mb-28 sm:mb-40">
+    <motion.section
+      id="experience"
+      ref={ref}
+      className="scroll-mt-28 mb-28 sm:mb-40"
+      initial={{
+        opacity: 0,
+      }}
+      whileInView={{
+        opacity: 1,
+      }}
+      transition={{
+        duration: 1,
+      }}
+      viewport={{
+        once: true,
+      }}
+    >
       <SectionHeading>My experience</SectionHeading>
       <div className="sm:my-20 lg:ml-[10rem] lg:mr-[10rem]">
         <div className="relative mt-10 md:mt-20 md:p-20 flex flex-col items-center sm:flex-row sm:items-start">
@@ -149,7 +165,7 @@ const Experience = () => {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

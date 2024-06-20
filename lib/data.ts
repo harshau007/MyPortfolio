@@ -1,6 +1,6 @@
 import tcetlinux from "@/public/tcetlinux.png";
 import welcome from "@/public/welcome.png";
-import ducker from "@/public/ducker.png";
+import devbox from "@/public/devbox.png";
 
 export const links = [
   {
@@ -35,7 +35,7 @@ export const links = [
 
 export const projectsData = [
   {
-    title: "ALG-Welcome",
+    title: "ALG Welcome",
     description:
       "A user-friendly Welcome application for Arka Linux GUI, aiding users in navigating Arch-based Linux distributions efficiently.",
     tags: ["Go", "ReactJs", "TailwindCSS", "Wails"],
@@ -51,12 +51,12 @@ export const projectsData = [
     link: "https://github.com/tcet-opensource/tcet-linux",
   },
   {
-    title: "Ducker",
+    title: "DevBox",
     description:
-      "Comprehensive solution for monitoring Docker containers. It displays running Docker containers and their stats and logs on a user-friendly frontend interface.",
-    tags: ["NestJs", "Docker Engine API", "ReactJs", "ChartJs"],
-    imageUrl: ducker,
-    link: "https://github.com/harshau007/ducker",
+      "DevBox is a powerful CLI tool to create and manage isolated containers for developers with their desired technology stacks, such as Node.js, Python, Rust, and more.",
+    tags: ["Go", "Docker", "Cobra CLI", "Bubbletea"],
+    imageUrl: devbox,
+    link: "https://github.com/harshau007/devbox",
   },
 ] as const;
 
