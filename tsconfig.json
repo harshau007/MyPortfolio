@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "allowImportingTsExtensions": true,
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
@@ -29,7 +30,10 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "out/types/**/*.ts",
-    "lib/motion.js"
+    "lib/motion.js",
+    "app/blogs/[slug]/blogpost.jsx",
+    "app/blogs/[slug]/page.jsx",
+    "lib/utils.js"
   ],
   "exclude": ["node_modules"],
   "loader": "babel-loader",

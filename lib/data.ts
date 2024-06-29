@@ -12,6 +12,10 @@ export const links = [
     hash: "#about",
   },
   {
+    name: "Blogs",
+    hash: "#blogs",
+  },
+  {
     name: "Projects",
     hash: "#projects",
   },

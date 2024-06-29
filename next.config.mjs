@@ -1,3 +1,7 @@
+import createMDX from "fumadocs-mdx/config";
+
+const withMDX = createMDX();
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
@@ -8,8 +12,8 @@ const nextConfig = {
       },
       {
         protocol: "https",
-        hostname: "raw.githubusercontent.com"
-      }
+        hostname: "raw.githubusercontent.com",
+      },
     ],
   },
   experimental: {
@@ -18,4 +22,4 @@ const nextConfig = {
   distDir: "out",
 };
 
-module.exports = nextConfig;
+export default withMDX(nextConfig);

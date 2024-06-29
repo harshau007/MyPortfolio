@@ -59,7 +59,7 @@ export default function App() {
                 />
               </ModalBody>
               <ModalFooter>
-                <Button color="primary">
+                <Button>
                   <a href="/Resume.pdf" download>
                     Download
                   </a>

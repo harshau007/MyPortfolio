@@ -56,7 +56,7 @@ const Github = () => {
     <section
       id="github"
       ref={ref}
-      className="px-4 py-8 mb-12 text-gray-800 bg-gray-200 rounded-lg shadow-md sm:mb-20 sm:px-8 sm:py-12 dark:bg-gray-800 dark:text-gray-200"
+      className="px-4 py-8 mb-12 mb-28 scroll-mt-28 text-gray-800 bg-gray-200 rounded-lg shadow-md sm:mb-20 sm:px-8 sm:py-12 dark:bg-gray-800 dark:text-gray-200"
     >
       <SectionHeading>Github</SectionHeading>
       <div className="flex items-center mt-8 lg:ml-10">
